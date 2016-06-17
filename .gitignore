@@ -1,0 +1,5 @@
+## .gitignore for the dotfiles repo
+
+# vim
+vim/bundle
+vim/.netrwhist
