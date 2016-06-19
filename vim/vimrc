@@ -4,6 +4,11 @@ filetype off                    " Set this off whilst we do our Vundle thing
 " Leader
 let mapleader=" "
 
+" set fillchars+=stl:\ ,stlnc:\
+" set fillchars=stl:―,stlnc:—,vert:│,fold:۰,diff:·
+" set term=xterm-256color
+" set termencoding=utf-8
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -12,12 +17,17 @@ Bundle 'gmarik/vundle'
 " --- Motion utilities
 Bundle "vim-scripts/matchit.zip"            
 Bundle "Lokaltog/vim-easymotion"            
-Bundle "kien/ctrlp.vim"                     
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " --- Interface tweaks
-Bundle "Lokaltog/vim-powerline"             
+" Bundle "Lokaltog/vim-powerline"
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'edkolev/tmuxline.vim'
+" Plugin 'vim-perl/vim-perl'
 Bundle "sjl/vitality.vim"                   
 Bundle "altercation/vim-colors-solarized"   
+Plugin 'chriskempson/base16-vim'
 "Bundle "gcmt/taboo.vim"
 "Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 "Bundle 'jgdavey/vim-railscasts'
@@ -77,6 +87,7 @@ set history=50                  " Keep the last 50 commands
 set t_ti= t_te=                 " Do not clear the screen when exiting vim, and preserve the window
 au FocusLost * :silent! wall    " Autosave on losing focus (works in iTerms2 and tmux using VITality plugin)
 syntax enable
+set synmaxcol=250               " limits syntax highlight to first 250 columns, to prevent slow down on long lines"
 filetype plugin indent on       " load file type plugins + indentation
 
 " Store temporary files in a central spot
@@ -106,14 +117,21 @@ set wildmenu
 set wildignore+=*/.hg/*,*/.svn/*,*.swp,*.swo
 
 "" Editor window dressing
-colorscheme solarized
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-tomorrow
+" colorscheme base16-solarized
+" colorscheme base16-eighties
+" colorscheme base16-ocean
+" colorscheme base16-monokai
+
+" colorscheme solarized
 set t_Co=256                    " 256 colours
 set cursorline                  " Highlight current line
 set ruler                       " Show a ruler
-"set number                      " Show line numbers
+set number                      " Show line numbers
 set relativenumber              " Show lines numbers relative to where you are
-au InsertEnter * :set nu        " absolute line numbers in insert mode,
-au InsertLeave * :set rnu       " relative otherwise for easy movement
+" au InsertEnter * :set nu        " absolute line numbers in insert mode,
+" au InsertLeave * :set rnu       " relative otherwise for easy movement
 set showmatch                   " Show matching brackets
 set guifont=Inconsolata:h18     "Set the font to Inconsolata at 18pt. (Yes, it's huge)
 set bg=dark                     " Dark background
@@ -122,7 +140,7 @@ set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮ " Make the lis
 set showbreak=↪
 
 function! CurDir()
-  let curdir = substitute(getcwd(), '/home/gabrielf/', "~/", "g")
+  let curdir = substitute(getcwd(), '/home/nileshn/', "~/", "g")
   return curdir
 endfunction
 set laststatus=2                " Show statusline on second last line
@@ -137,6 +155,10 @@ map <leader><right> :tabn<cr>   " Select tab to the right
 map <leader><left> :tabp<cr>    " Select tab to the left
 map <leader>k :tabn<cr>         " Select tab to the right using k
 map <leader>j :tabp<cr>         " Select tab to the left using j
+
+"" Open v-split on right & h-split at bottom
+" set splitbelow
+set splitright
 
 "" Split window shortcuts
 nmap <silent> <A-Up> :wincmd k<CR>
