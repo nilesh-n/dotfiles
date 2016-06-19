@@ -1,5 +1,4 @@
 set nocompatible                " choose no compatibility with legacy vi
-filetype off                    " Set this off whilst we do our Vundle thing
 
 " Leader
 let mapleader=" "
@@ -9,70 +8,73 @@ let mapleader=" "
 " set term=xterm-256color
 " set termencoding=utf-8
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+filetype off                    " required for vundle
+set rtp+=~/.vim/bundle/vundle/  " required for vundle
+call vundle#begin()
 
-Bundle 'gmarik/vundle' 
+Plugin 'gmarik/vundle'
 
 " --- Motion utilities
-Bundle "vim-scripts/matchit.zip"            
-Bundle "Lokaltog/vim-easymotion"            
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'Lokaltog/vim-easymotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " --- Interface tweaks
-" Bundle "Lokaltog/vim-powerline"
+" Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'edkolev/tmuxline.vim'
 " Plugin 'vim-perl/vim-perl'
-Bundle "sjl/vitality.vim"                   
-Bundle "altercation/vim-colors-solarized"   
+Plugin 'sjl/vitality.vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
-"Bundle "gcmt/taboo.vim"
-"Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-"Bundle 'jgdavey/vim-railscasts'
-"Bundle 'tomasr/molokai'
-"Bundle 'morhetz/gruvbox'
-"Bundle 'sjl/badwolf'
-"Bundle 'nanotech/jellybeans.vim'
+"Plugin 'gcmt/taboo.vim'
+"Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+"Plugin 'jgdavey/vim-railscasts'
+"Plugin 'tomasr/molokai'
+"Plugin 'morhetz/gruvbox'
+"Plugin 'sjl/badwolf'
+"Plugin 'nanotech/jellybeans.vim'
 
 " Watch for file updates
-" Bundle 'gee-forr/vim-watch_for_changes'
+" Plugin 'gee-forr/vim-watch_for_changes'
 
 " --- Ruby utils
-Bundle "vim-scripts/ruby-matchit"           
-Bundle "vim-ruby/vim-ruby"                  
-Bundle "tpope/vim-rails"                    
-Bundle "tpope/vim-endwise"                  
-Bundle "kchmck/vim-coffee-script"           
-"Bundle 'tpope/vim-bundler'                  " Bundler utils
-"Bundle 'sunaku/vim-ruby-minitest'
+Plugin 'vim-scripts/ruby-matchit'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-endwise'
+Plugin 'kchmck/vim-coffee-script'
+"Plugin 'tpope/vim-bundler'                  " Bundler utils
+"Plugin 'sunaku/vim-ruby-minitest'
 
 " --- General dev utils
-Bundle 'gee-forr/vim-slurper'
-Bundle "airblade/vim-gitgutter"             
-Bundle "scrooloose/syntastic"               
-Bundle "tpope/vim-fugitive"                 
-Bundle "ervandew/supertab"                  
-Bundle "godlygeek/tabular"                  
-Bundle "majutsushi/tagbar"                  
-Bundle "tpope/vim-surround"                 
-Bundle "scrooloose/nerdtree"                
-Bundle "scrooloose/nerdcommenter"           
-Bundle "mileszs/ack.vim"                    
-Bundle "kana/vim-smartinput"                
-Bundle "Yggdroot/indentLine"
-Bundle 'Keithbsmiley/investigate.vim'
-Bundle 'benmills/vimux'
-Bundle 'jgdavey/vim-turbux'
-"Bundle 'kien/rainbow_parentheses.vim'       " Colour parens depending on nesting
-"Bundle 'tpope/vim-unimpaired'
-"Bundle 'Shougo/neocomplcache'
+Plugin 'gee-forr/vim-slurper'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'mileszs/ack.vim'
+Plugin 'kana/vim-smartinput'
+Plugin 'Yggdroot/indentLine'
+Plugin 'Keithbsmiley/investigate.vim'
+Plugin 'benmills/vimux'
+Plugin 'jgdavey/vim-turbux'
+"Plugin 'kien/rainbow_parentheses.vim'       " Colour parens depending on nesting
+"Plugin 'tpope/vim-unimpaired'
+"Plugin 'Shougo/neocomplcache'
 
 " Snippet management
-"Bundle "MarcWeber/vim-addon-mw-utils"
-"Bundle "tomtom/tlib_vim"
-"Bundle "garbas/vim-snipmate"              
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+
+call vundle#end()               " required for vundle
 
 "au BufWritePost .vimrc so ~/.vimrc " automatically reload vimrc when it's saved
 
