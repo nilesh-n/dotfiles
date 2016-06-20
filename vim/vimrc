@@ -28,16 +28,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sjl/vitality.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
-"Plugin 'gcmt/taboo.vim'
-"Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-"Plugin 'jgdavey/vim-railscasts'
 "Plugin 'tomasr/molokai'
 "Plugin 'morhetz/gruvbox'
 "Plugin 'sjl/badwolf'
 "Plugin 'nanotech/jellybeans.vim'
-
-" Watch for file updates
-" Plugin 'gee-forr/vim-watch_for_changes'
 
 " --- Ruby utils
 Plugin 'vim-scripts/ruby-matchit'
@@ -46,10 +40,8 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'kchmck/vim-coffee-script'
 "Plugin 'tpope/vim-bundler'                  " Bundler utils
-"Plugin 'sunaku/vim-ruby-minitest'
 
 " --- General dev utils
-Plugin 'gee-forr/vim-slurper'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
@@ -65,14 +57,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'Keithbsmiley/investigate.vim'
 Plugin 'benmills/vimux'
 Plugin 'jgdavey/vim-turbux'
-"Plugin 'kien/rainbow_parentheses.vim'       " Colour parens depending on nesting
 "Plugin 'tpope/vim-unimpaired'
-"Plugin 'Shougo/neocomplcache'
-
-" Snippet management
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
 
 call vundle#end()               " required for vundle
 
@@ -212,6 +197,3 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
 " Abbreviations
 iabbrev trye true
-
-"let g:taboo_modified_tab_flag="+⮁"
-"let g:taboo_tab_format="⮀%N %f %m"
