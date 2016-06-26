@@ -71,6 +71,7 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 set scrolloff=7                 " Never scroll to the edge of the window
 set history=50                  " Keep the last 50 commands
+set laststatus=2                " Show statusline on second last line
 au FocusLost * :silent! wall    " Autosave on losing focus (works in iTerms2 and tmux using VITality plugin)
 syntax enable
 set synmaxcol=250               " limits syntax highlight to first 250 columns, to prevent slow down on long lines"
@@ -122,12 +123,7 @@ set bg=dark                     " Dark background
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮ " Make the list chars less hideous (and more like textmate)
 set showbreak=↪
 
-function! CurDir()
-  let curdir = substitute(getcwd(), '/home/nileshn/', "~/", "g")
-  return curdir
-endfunction
-set laststatus=2                " Show statusline on second last line
-set statusline=\ [%F%m%r%h\ %w]\ \ \ [CWD:%r%{CurDir()}%h]\ \ \ [Type=%Y]\ \ \ %{fugitive#statusline()}\ \ \ [Line:%l/%L:%c\ %p%%]\ 
+set statusline=\ [%F%m%r%h\ %w]\ \ \ [CWD:%r%{getcwd()}%h]\ \ \ [Filetype=%Y]\ \ \ %{fugitive#statusline()}\ \ \ [Line:%l/%L\ Col:%c\ %p%%]
 
 "" Tab shortcuts
 map <leader>tn :tabnew 
