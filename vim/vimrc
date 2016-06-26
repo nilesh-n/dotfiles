@@ -71,7 +71,6 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 set scrolloff=7                 " Never scroll to the edge of the window
 set history=50                  " Keep the last 50 commands
-set t_ti= t_te=                 " Do not clear the screen when exiting vim, and preserve the window
 au FocusLost * :silent! wall    " Autosave on losing focus (works in iTerms2 and tmux using VITality plugin)
 syntax enable
 set synmaxcol=250               " limits syntax highlight to first 250 columns, to prevent slow down on long lines"
@@ -117,12 +116,9 @@ set cursorline                  " Highlight current line
 set ruler                       " Show a ruler
 set number                      " Show line numbers
 set relativenumber              " Show lines numbers relative to where you are
-" au InsertEnter * :set nu        " absolute line numbers in insert mode,
-" au InsertLeave * :set rnu       " relative otherwise for easy movement
 set showmatch                   " Show matching brackets
 set guifont=Inconsolata:h18     "Set the font to Inconsolata at 18pt. (Yes, it's huge)
 set bg=dark                     " Dark background
-"set bg=light                    " Light background
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮ " Make the list chars less hideous (and more like textmate)
 set showbreak=↪
 
@@ -152,24 +148,6 @@ nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
-
-"" Be clever about pasting from somewhere into the terminal
-"" This detects a paste from the pasteboard and will temporarily
-"" set pastetoggle
-"" Doesn't work with things like tmux and screen
-"if &term =~ "xterm.*"
-    "let &t_ti = &t_ti . "\e[?2004h"
-    "let &t_te = "\e[?2004l" . &t_te
-    "function XTermPasteBegin(ret)
-        "set pastetoggle=<Esc>[201~
-        "set paste
-        "return a:ret
-    "endfunction
-    "map <expr> <Esc>[200~ XTermPasteBegin("i")
-    "imap <expr> <Esc>[200~ XTermPasteBegin("")
-    "cmap <Esc>[200~ <nop>
-    "cmap <Esc>[201~ <nop>
-"endif
 
 "" Make vim jump to the last known line
 if has("autocmd")
