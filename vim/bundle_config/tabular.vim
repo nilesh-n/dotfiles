@@ -10,5 +10,6 @@
 "  endif
 "endfunction
 
-map <leader>= :Tabularize /=<cr> " Map leader= to auto-align assigment blocks
+" map <leader>= :Tabularize /=<cr> " Map leader= to auto-align assigment blocks
+map <leader>= :Tabularize /^[^=]*\zs=<cr> " Map leader= to auto-align assigment blocks
 map <leader>: :Tabularize /:\zs/l0r1<cr>

@@ -1,4 +1,5 @@
-let g:airline_theme='base16_tomorrow'
+" let g:airline_theme='base16_tomorrow'
+let g:airline_theme='gruvbox'
 
 " Do not draw separators for empty sections (only for the active window)
 let g:airline_skip_empty_sections = 1
@@ -24,7 +25,8 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '⋮'
 
 " change set paste colour to red
-call airline#parts#define_accent('paste', 'red')
+" call airline#parts#define_accent('paste', 'red')
+call airline#parts#define_accent('paste', 'yellow')
 
 " Remove delay when switching between modes
 " set ttimeoutlen=50 "might be too short for longer shortcuts, use powerline one
@@ -68,8 +70,8 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
-" let g:airline_symbols.readonly = ''
-" let g:airline_symbols.linenr = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 " custom
 let g:airline_left_sep = ''

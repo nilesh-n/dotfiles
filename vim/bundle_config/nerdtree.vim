@@ -1,3 +1,3 @@
 nnoremap <silent> <leader><TAB> :NERDTreeToggle<CR>
 
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0

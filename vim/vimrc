@@ -5,6 +5,14 @@ let mapleader=" "
 
 " set fillchars+=stl:\ ,stlnc:\
 " set fillchars=stl:―,stlnc:—,vert:│,fold:۰,diff:·
+
+" create solid vertical split borders for gruvbox
+set fillchars=vert:│
+
+" delete pipe characters on styling vertical split borders for gruvbox
+" set fillchars+=vert:\ 
+" let g:gruvbox_vert_split='bg1'
+
 " set term=xterm-256color
 " set termencoding=utf-8
 
@@ -29,7 +37,7 @@ Plugin 'sjl/vitality.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
 "Plugin 'tomasr/molokai'
-"Plugin 'morhetz/gruvbox'
+Plugin 'morhetz/gruvbox'
 "Plugin 'sjl/badwolf'
 "Plugin 'nanotech/jellybeans.vim'
 
@@ -39,7 +47,11 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'slim-template/vim-slim.git'
 "Plugin 'tpope/vim-bundler'                  " Bundler utils
+
+" --- Angular utils
+Plugin 'leafgarland/typescript-vim'
 
 " --- General dev utils
 Plugin 'airblade/vim-gitgutter'
@@ -55,11 +67,40 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kana/vim-smartinput'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Keithbsmiley/investigate.vim'
-Plugin 'benmills/vimux'
-Plugin 'jgdavey/vim-turbux'
+" Plugin 'benmills/vimux'
+" Plugin 'jgdavey/vim-turbux'
+Plugin 'alvan/vim-closetag'
 "Plugin 'tpope/vim-unimpaired'
 
+" --- Testing
+Plugin 'janko-m/vim-test'
+Plugin 'tpope/vim-dispatch'
+
 call vundle#end()               " required for vundle
+
+" set smaller updatetime to refresh git-gutter faster (default=4000)
+set updatetime=100
+
+" filetypes for vim-closetag
+let g:closetag_filenames = "*.html.erb,*.html,*.xhtml,*.phtml"
+
+" Treat <li> and <p> tags like the block tags they are
+" let g:html_indent_tags = 'li\|p'
+
+" --- Testing Configs
+" vim-test shortcuts
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+nmap <silent> <Leader>t :TestFile<CR>
+nmap <silent> <Leader>s :TestNearest<CR>
+nmap <silent> <Leader>l :TestLast<CR>
+nmap <silent> <Leader>e :TestSuite<CR>
+nmap <silent> <Leader>g :TestVisit<CR>
+let test#strategy = "dispatch"
+let test#ruby#bundle_exec = 0 " don't prepend bundle exec when running
 
 "au BufWritePost .vimrc so ~/.vimrc " automatically reload vimrc when it's saved
 
@@ -76,6 +117,7 @@ au FocusLost * :silent! wall    " Autosave on losing focus (works in iTerms2 and
 syntax enable
 set synmaxcol=250               " limits syntax highlight to first 250 columns, to prevent slow down on long lines"
 filetype plugin indent on       " load file type plugins + indentation
+set belloff=all
 
 " Store temporary files in a central spot
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -104,12 +146,23 @@ set wildmenu
 set wildignore+=*/.hg/*,*/.svn/*,*.swp,*.swo
 
 "" Editor window dressing
-let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-tomorrow
+set termguicolors " 24-bit true colour
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+
+" let base16colorspace=256  " Access colors present in 256 colorspace
+" colorscheme base16-tomorrow
 " colorscheme base16-solarized
 " colorscheme base16-eighties
 " colorscheme base16-ocean
 " colorscheme base16-monokai
+
+"" gruvbox customisation
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_sign_column='dark0_hard' "or bg0
+let g:gruvbox_invert_selection='0'
+let g:gruvbox_invert_tabline='0'
+colorscheme gruvbox
 
 " colorscheme solarized
 set t_Co=256                    " 256 colours
@@ -171,3 +224,6 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
 " Abbreviations
 iabbrev trye true
+
+" shortcut for ack
+map <Leader>a :Ack!<Space>
