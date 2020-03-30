@@ -10,3 +10,7 @@ ln -sf $dots/tmux/tmuxline-gruvbox.conf ~/.tmuxline.conf
 # vim
 ln -sf $dots/vim/vimrc ~/.vimrc
 ln -sf $dots/vim/ ~/.vim
+
+# ruby
+ln -sf $dots/ruby/gemrc ~/.gemrc
+ln -sf $dots/ruby/irbrc ~/.irbrc
