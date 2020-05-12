@@ -211,7 +211,7 @@ endif
 "" Fix silly typos to DWIM, not DWIS
 "cmap W w
 cmap Q q
-cmap gst Gstatus
+cmap gst Gstatus<CR>
 
 "" Load up bundle specfic configuration
 ""  -- doesn't clutter up the rest of the vimrc this way.
