@@ -232,3 +232,10 @@ iabbrev trye true
 
 " shortcut for ack
 map <Leader>a :Ack!<Space>
+
+" quicker buffer navigation
+nnoremap <Leader>p :ls<CR>:b<Space>
+nnoremap <PageUp>   :bprevious<CR>
+nnoremap <PageDown> :bnext<CR>
+" type :vb<space> to open buffer in a vertical split
+cabbrev vb vert sb
