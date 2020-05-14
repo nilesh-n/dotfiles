@@ -189,8 +189,8 @@ map <leader>te :tabe
 map <leader>tc :tabclose<cr>    " Close
 map <leader><right> :tabn<cr>   " Select tab to the right
 map <leader><left> :tabp<cr>    " Select tab to the left
-map <leader>k :tabn<cr>         " Select tab to the right using k
-map <leader>j :tabp<cr>         " Select tab to the left using j
+map <leader><leader>k :tabn<cr> " Select tab to the right using k
+map <leader><leader>j :tabp<cr> " Select tab to the left using j
 
 "" Open v-split on right & h-split at bottom
 " set splitbelow
