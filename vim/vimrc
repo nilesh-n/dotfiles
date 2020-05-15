@@ -237,5 +237,7 @@ map <Leader>a :Ack!<Space>
 nnoremap <Leader>p :ls<CR>:b<Space>
 nnoremap <PageUp>   :bprevious<CR>
 nnoremap <PageDown> :bnext<CR>
+nnoremap <Leader>j <Esc>:bprevious<CR>
+nnoremap <Leader>k <Esc>:bnext<CR>
 " type :vb<space> to open buffer in a vertical split
 cabbrev vb vert sb
