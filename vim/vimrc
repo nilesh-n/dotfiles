@@ -241,3 +241,8 @@ nnoremap <Leader>j <Esc>:bprevious<CR>
 nnoremap <Leader>k <Esc>:bnext<CR>
 " type :vb<space> to open buffer in a vertical split
 cabbrev vb vert sb
+
+" turn on spellchecking for markdown and gitcommit files
+autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown setlocal spell
+set complete+=kspell
