@@ -37,7 +37,7 @@ Plugin 'sjl/vitality.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
 "Plugin 'tomasr/molokai'
-Plugin 'morhetz/gruvbox'
+Plugin 'gruvbox-community/gruvbox'
 "Plugin 'sjl/badwolf'
 "Plugin 'nanotech/jellybeans.vim'
 
