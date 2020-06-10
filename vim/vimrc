@@ -242,6 +242,12 @@ nnoremap <Leader>k <Esc>:bnext<CR>
 " type :vb<space> to open buffer in a vertical split
 cabbrev vb vert sb
 
+" quicker split navigation
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+
 " turn on spellchecking for markdown and gitcommit files
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal spell
