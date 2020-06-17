@@ -146,8 +146,8 @@ set wildignore+=*/.hg/*,*/.svn/*,*.swp,*.swo
 
 "" Editor window dressing
 set termguicolors " 24-bit true colour
-let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
-let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+" let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+" let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 
 " let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme base16-tomorrow
