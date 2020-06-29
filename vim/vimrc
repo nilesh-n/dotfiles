@@ -142,6 +142,7 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 set gdefault                    " Make global search and replace the default (use /g to make it singular)
 set wildmenu
+set wildignorecase              "case is ignored when completing file names and directories
 set wildignore+=*/.hg/*,*/.svn/*,*.swp,*.swo,*/node_modules/*
 
 "" Editor window dressing
