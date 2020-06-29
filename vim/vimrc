@@ -142,7 +142,7 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 set gdefault                    " Make global search and replace the default (use /g to make it singular)
 set wildmenu
-set wildignore+=*/.hg/*,*/.svn/*,*.swp,*.swo
+set wildignore+=*/.hg/*,*/.svn/*,*.swp,*.swo,*/node_modules/*
 
 "" Editor window dressing
 set termguicolors " 24-bit true colour
