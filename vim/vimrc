@@ -24,7 +24,6 @@ Plugin 'gmarik/vundle'
 
 " --- Motion utilities
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " --- Interface tweaks
