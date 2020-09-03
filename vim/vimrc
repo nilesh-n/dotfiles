@@ -24,7 +24,7 @@ Plugin 'gmarik/vundle'
 
 " --- Motion utilities
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 
 " --- Interface tweaks
 " Plugin 'Lokaltog/vim-powerline'
@@ -66,11 +66,16 @@ Plugin 'kana/vim-smartinput'
 Plugin 'alvan/vim-closetag'
 "Plugin 'tpope/vim-unimpaired'
 
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
+
 " --- Testing
 Plugin 'janko-m/vim-test'
 Plugin 'tpope/vim-dispatch'
 
 call vundle#end()               " required for vundle
+
+set rtp+=/usr/local/opt/fzf
 
 " set smaller updatetime to refresh git-gutter faster (default=4000)
 set updatetime=100
@@ -227,9 +232,19 @@ iabbrev trye true
 
 " shortcut for ack
 map <Leader>a :Ack!<Space>
+map <Leader>f :Rg<Space>
+" nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <leader>rr :Rg <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-p> :Files<CR>
+
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.8 } }
+let g:fzf_preview_window = 'right:40%'
+let $FZF_DEFAULT_OPTS='--reverse'
+let g:fzf_history_dir = '~/.fzf_history'
 
 " quicker buffer navigation
-nnoremap <Leader>p :ls<CR>:b<Space>
+" nnoremap <Leader>p :ls<CR>:b<Space>
+nnoremap <Leader>p :Buffers<CR>
 nnoremap <PageUp>   :bprevious<CR>
 nnoremap <PageDown> :bnext<CR>
 nnoremap <Leader>j <Esc>:bprevious<CR>
