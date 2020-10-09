@@ -14,6 +14,7 @@ ln -sf $dots/vim/ ~/.vim
 # ruby
 ln -sf $dots/ruby/gemrc ~/.gemrc
 ln -sf $dots/ruby/irbrc ~/.irbrc
+ln -sf $dots/ruby/rspec ~/.rspec
 
 # git
 ln -sf $dots/git/gitignore_global ~/.gitignore_global
