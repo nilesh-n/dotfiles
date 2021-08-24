@@ -89,8 +89,8 @@ call plug#end()
 "-----------------------------------------------------------------------------
 
 " edit & source vim config files
-nmap <leader><leader>e :edit ~/.config/nvim/init.vim<cr>
-nmap <leader><leader>r :source ~/.config/nvim/init.vim<cr>
+nmap <leader><leader>e :edit ~/dotfiles/nvim/init.vim<cr>
+nmap <leader><leader>r :source ~/dotfiles/nvim/init.vim<cr>
 
 " quicker split navigation
 nmap <silent> <C-h> :wincmd h<CR>
