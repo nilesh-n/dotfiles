@@ -11,6 +11,10 @@ ln -sf $dots/tmux/tmuxline-gruvbox.conf ~/.tmuxline.conf
 ln -sf $dots/vim/vimrc ~/.vimrc
 ln -sf $dots/vim/ ~/.vim
 
+# nvim
+ln -sf $dots/nvim/init.vim ~/.config/nvim/init.vim
+ln -sf $dots/nvim/lua ~/.config/nvim/lua
+
 # ruby
 ln -sf $dots/ruby/gemrc ~/.gemrc
 ln -sf $dots/ruby/irbrc ~/.irbrc
