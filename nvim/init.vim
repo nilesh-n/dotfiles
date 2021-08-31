@@ -179,9 +179,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-" highlight marked files in netrw the same colour as search
-highlight link netrwMarkFile Search
-
 " gruvbox
 " let g:gruvbox_contrast_dark='hard'
 " let g:gruvbox_invert_selection='0'
@@ -195,6 +192,9 @@ highlight ErrorMsg guibg=#F07178 guifg=#0A0E14
 " make cursor line nr & sign column blend in
 highlight CursorLineNR guibg=none
 highlight SignColumn guibg=none
+
+" highlight marked files in netrw the same colour as search
+highlight link netrwMarkFile Search
 
 "-----------------------------------------------------------------------------
 " plugin configs
