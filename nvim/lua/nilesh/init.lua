@@ -5,9 +5,12 @@ require('telescope').setup {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         prompt_prefix = '❯ ',
         selection_caret = '❯ ',
-        prompt_position = 'top',
         sorting_strategy = 'ascending',
-        width = 0.9,
+        layout_config = {
+          width = 0.9,
+          height = 0.8,
+          prompt_position = 'top'
+        },
 
         mappings = {
           i = {
