@@ -82,6 +82,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+
+Plug 'ThePrimeagen/harpoon'
+
 call plug#end()
 
 "-----------------------------------------------------------------------------
@@ -227,6 +230,7 @@ nmap <leader>t :Ttoggle<CR>
 
 " vim-test
 let test#strategy = 'neoterm'
+" let test#strategy = 'harpoon'
 " let test#strategy = 'neovim'
 " let test#neovim#term_position = 'belowright'
 
@@ -282,6 +286,19 @@ nnoremap <leader>fe <cmd>Telescope file_browser<cr>
 nnoremap <leader>fs :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <leader>fw :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
 nnoremap <leader>fc :lua require('nilesh').search_dotfiles()<CR>
+
+" harpoon: remaps
+nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
+nnoremap <M-e> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+
+nnoremap <M-j> :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <M-k> :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <M-l> :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <M-;> :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <leader>hf :lua require("harpoon.term").gotoTerminal(1)<CR>
+nnoremap <leader>hd :lua require("harpoon.term").gotoTerminal(2)<CR>
+nnoremap <leader>if :lua require("harpoon.term").sendCommand(1, 'ls\n')<CR>
+nnoremap <leader>id :lua require("harpoon.term").sendCommand(1, 2)<CR>
 
 "-----------------------------------------------------------------------------
 " miscellaneous

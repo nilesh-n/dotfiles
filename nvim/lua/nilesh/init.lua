@@ -58,6 +58,9 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
+-- harpoon
+require("harpoon").setup()
+
 local M = {}
 M.search_dotfiles = function()
     require("telescope.builtin").find_files({
