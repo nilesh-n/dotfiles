@@ -46,7 +46,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
 
@@ -84,6 +84,12 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
 Plug 'ThePrimeagen/harpoon'
+
+"lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
+Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
+Plug 'hrsh7th/cmp-buffer' " Buffer completion source
 
 call plug#end()
 
@@ -190,6 +196,7 @@ endif
 " ayu: options - light/dark/mirage
 let ayucolor='dark'
 colorscheme ayu
+let g:ayu_extended_palette = 1
 highlight ErrorMsg guibg=#F07178 guifg=#0A0E14
 
 " make cursor line nr & sign column blend in
@@ -250,16 +257,16 @@ nmap <silent> <leader>5 :TestVisit<CR>
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
 " coc: remaps
 nnoremap <leader>rw :CocSearch <C-R>=expand("<cword>")<CR><CR>
@@ -299,6 +306,35 @@ nnoremap <leader>hf :lua require("harpoon.term").gotoTerminal(1)<CR>
 nnoremap <leader>hd :lua require("harpoon.term").gotoTerminal(2)<CR>
 nnoremap <leader>if :lua require("harpoon.term").sendCommand(1, 'ls\n')<CR>
 nnoremap <leader>id :lua require("harpoon.term").sendCommand(1, 2)<CR>
+
+" lsp
+set completeopt=menuone,noselect
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+" nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
+" nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
+nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
+" nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
+" nnoremap <leader>vrn :lua vim.lsp.buf.rename()<CR>
+" nnoremap <leader>vh :lua vim.lsp.buf.hover()<CR>
+" nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
+" " nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
+" nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+" nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
+
+" nnoremap gD :lua vim.lsp.buf.declaration()<CR>
+" nnoremap gd :lua vim.lsp.buf.definition()<CR>
+" nnoremap K :lua vim.lsp.buf.hover()<CR>
+" nnoremap gi :lua vim.lsp.buf.implementation()<CR>
+" nnoremap gr :lua vim.lsp.buf.references()<CR>
+" nnoremap <C-k> :lua vim.lsp.buf.signature_help()<CR>
+" nnoremap <leader>D :lua vim.lsp.buf.type_definition()<CR>
+" nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
+" nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
+" nnoremap <leader>e :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+" nnoremap [d :lua vim.lsp.diagnostic.goto_prev()<CR>
+" nnoremap ]d :lua vim.lsp.diagnostic.goto_next()<CR>
+" nnoremap <leader>gf :lua vim.lsp.buf.formatting()<CR>
 
 "-----------------------------------------------------------------------------
 " miscellaneous
