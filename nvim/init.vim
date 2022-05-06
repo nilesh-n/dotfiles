@@ -325,6 +325,13 @@ autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal spell
 set complete+=kspell
 
+" highlight yanked text
+" use higroup to change highlight colour, e.g {higroup="IncSearch"}
+augroup highlight_yank
+  autocmd!
+  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Search", timeout=200})
+augroup END
+
 " gets overwritten by vim-polyglot: https://stackoverflow.com/a/8748154
 " O and o, don't continue comments to a newline
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o
