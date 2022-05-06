@@ -14,6 +14,7 @@ ln -sf $dots/vim/ ~/.vim
 # nvim
 ln -sf $dots/nvim/init.vim ~/.config/nvim/init.vim
 ln -sf $dots/nvim/lua ~/.config/nvim/lua
+ln -sf $dots/nvim/after ~/.config/nvim/after
 
 # ruby
 ln -sf $dots/ruby/gemrc ~/.gemrc
