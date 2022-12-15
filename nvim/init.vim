@@ -49,6 +49,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
+Plug 'slim-template/vim-slim'
 
 " utility
 Plug 'tpope/vim-surround'
@@ -343,3 +344,6 @@ autocmd BufReadPost,BufWinEnter schema.rb :LspStop
 " gets overwritten by vim-polyglot: https://stackoverflow.com/a/8748154
 " O and o, don't continue comments to a newline
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o
+
+" use slim syntax highlighting for *.inky-slim files
+autocmd BufNewFile,BufRead *.inky-slim setlocal filetype=slim
