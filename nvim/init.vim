@@ -251,11 +251,11 @@ nmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
-nmap <silent> <leader>1 :TestFile<CR>
-nmap <silent> <leader>2 :TestNearest<CR>
-nmap <silent> <leader>3 :TestLast<CR>
-nmap <silent> <leader>4 :TestSuite<CR>
-nmap <silent> <leader>5 :TestVisit<CR>
+nmap <silent> <leader>1 :TestSuite<CR>
+nmap <silent> <leader>2 :TestVisit<CR>
+nmap <silent> <leader>3 :TestNearest<CR>
+nmap <silent> <leader>4 :TestFile<CR>
+nmap <silent> <leader>5 :TestLast<CR>
 
 " coc
 " Use tab for trigger completion with characters ahead and navigate.
