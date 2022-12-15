@@ -198,6 +198,10 @@ let ayucolor='dark'
 colorscheme ayu
 let g:ayu_extended_palette = 1
 highlight ErrorMsg guibg=#F07178 guifg=#0A0E14
+" highlight NormalFloat guibg=#161e26
+" highlight FloatBorder guibg=#161e26
+" highlight PmenuSel ctermbg=242 guibg=#142335
+highlight PmenuSel cterm=reverse gui=reverse
 
 " make cursor line nr & sign column blend in
 highlight CursorLineNR guibg=none
