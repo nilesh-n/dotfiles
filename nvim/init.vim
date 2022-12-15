@@ -336,6 +336,10 @@ augroup highlight_yank
   au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Search", timeout=200})
 augroup END
 
+" autocmd BufRead */db/schema.rb lua vim.diagnostic.disable()
+" autocmd BufReadPre schema.rb :lua vim.diagnostic.disable()
+autocmd BufReadPost,BufWinEnter schema.rb :LspStop
+
 " gets overwritten by vim-polyglot: https://stackoverflow.com/a/8748154
 " O and o, don't continue comments to a newline
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o
