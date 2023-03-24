@@ -5,7 +5,8 @@ dots=~/dotfiles
 # tmux
 ln -sf $dots/tmux/tmux.conf ~/.tmux.conf
 #ln -sf $dots/tmux/tmuxline-tomorrow.conf ~/.tmuxline.conf
-ln -sf $dots/tmux/tmuxline-gruvbox.conf ~/.tmuxline.conf
+#ln -sf $dots/tmux/tmuxline-gruvbox.conf ~/.tmuxline.conf
+ln -sf $dots/tmux/tmuxline-ayu-dark.conf ~/.tmuxline.conf
 
 # vim
 ln -sf $dots/vim/vimrc ~/.vimrc
