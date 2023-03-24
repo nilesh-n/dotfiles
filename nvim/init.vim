@@ -295,6 +295,7 @@ nnoremap <leader>p <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fl <cmd>Telescope git_files<cr>
 nnoremap <leader>fe <cmd>Telescope file_browser<cr>
+nnoremap <leader>ds <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>fs :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <leader>fw :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
 nnoremap <leader>fc :lua require('nilesh').search_dotfiles()<CR>
