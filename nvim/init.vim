@@ -281,7 +281,7 @@ let g:AutoPairsCenterLine=0
 
 " vem-statusline
 let g:vem_statusline_parts = 'bfpP'
-let g:vem_statusline_branch_function = 'fugitive#head'
+let g:vem_statusline_branch_function = 'fugitive#Head'
 
 " telescope
 lua require('nilesh')
